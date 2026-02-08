@@ -35,6 +35,7 @@ console.log(JSON.stringify(withCastFunction)); // [{"2023":100,"2024":150,"2025"
 const withCastTrue = parse(data, {
   columns: true,
   cast: true,
+  from: 2,
 });
 
 console.log(JSON.stringify(withCastTrue)); // [{"2023":100,"2024":150,"2025":200,"Person":"John"}]

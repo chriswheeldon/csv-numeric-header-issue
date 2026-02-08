@@ -1,10 +1,10 @@
 # `csv` package numeric header issue
 
-This repository demonstrates a bug in the [`csv` npm package's](https://www.npmjs.com/package/csv) `parse` method when using `cast: true` with csv files that have numeric column headers.
+This repository demonstrates a bug in the [`csv` npm package's](https://www.npmjs.com/package/csv) `parse` method when using `columns: true, cast: true` with csv files that have numeric column headers.
 
 ## Problem
 
-When parsing csv data with numeric headers (e.g., year columns like "2023", "2024", "2025"), using the `cast: true` option causes the parser to throw an error:
+When parsing csv data with numeric headers (e.g., year columns like "2023", "2024", "2025"), using the `cast: true` option with `columns: true` causes the parser to throw an error:
 
 ```
 CsvError Error: Invalid column definition: expect a string or a literal object, got 2023 at position 1
