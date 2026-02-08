@@ -20,10 +20,11 @@ console.log(JSON.stringify(withoutCast)); // [{"2023":"100","2024":"150","2025":
 const withCastFunction = parse(data, {
   columns: true,
   cast: (value, context) => {
-    if (context.column === "Person") {
+    if (context.header) {
       return value;
     }
-    return context.header ? value : Number(value);
+    const casted = Number(value);
+    return isNaN(casted) ? value : casted;
   },
 });
 
@@ -35,7 +36,5 @@ console.log(JSON.stringify(withCastFunction)); // [{"2023":100,"2024":150,"2025"
 const withCastTrue = parse(data, {
   columns: true,
   cast: true,
-  from: 2,
 });
-
-console.log(JSON.stringify(withCastTrue)); // [{"2023":100,"2024":150,"2025":200,"Person":"John"}]
+console.log(JSON.stringify(withCastTrue));
