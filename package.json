@@ -1,0 +1,15 @@
+{
+  "name": "csv-numeric-header-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christopher Wheeldon",
+  "license": "MIT",
+  "dependencies": {
+    "csv": "^6.4.1",
+    "dedent": "^1.7.1"
+  }
+}
